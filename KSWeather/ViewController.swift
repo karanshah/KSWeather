@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ViewController: UIViewController {
 
+    let locationManager = CLLocationManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        setupLocationManager()
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,3 +27,35 @@ class ViewController: UIViewController {
 
 }
 
+extension ViewController : CLLocationManagerDelegate {
+    
+    func setupLocationManager(){
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = manager.location else {
+            return
+        }
+        
+        CLGeocoder().reverseGeocodeLocation(location) { (placemarks, error) -> Void in
+            if error != nil {
+                print(error)
+                return
+            }
+            if let placemark = placemarks?.last {
+                self.locationManager.stopUpdatingLocation()
+                print(placemark.locality)
+                print(placemark.postalCode)
+            }
+        }
+    }
+    
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print(error)
+    }
+    
+}
