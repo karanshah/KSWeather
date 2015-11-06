@@ -15,6 +15,7 @@
 		FCB7DF361BEAC93B0017C281 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCB7DF341BEAC93B0017C281 /* LaunchScreen.storyboard */; };
 		FCB7DF411BEAC93B0017C281 /* KSWeatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB7DF401BEAC93B0017C281 /* KSWeatherTests.swift */; };
 		FCB7DF4C1BEAC93B0017C281 /* KSWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB7DF4B1BEAC93B0017C281 /* KSWeatherUITests.swift */; };
+		FCC4B75F1BEBE14C00450019 /* WeatherAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCC4B75E1BEBE14C00450019 /* WeatherAPIService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		FCB7DF471BEAC93B0017C281 /* KSWeatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KSWeatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCB7DF4B1BEAC93B0017C281 /* KSWeatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KSWeatherUITests.swift; sourceTree = "<group>"; };
 		FCB7DF4D1BEAC93C0017C281 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FCC4B75E1BEBE14C00450019 /* WeatherAPIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherAPIService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				FCB7DF341BEAC93B0017C281 /* LaunchScreen.storyboard */,
 				FCB7DF371BEAC93B0017C281 /* Info.plist */,
 				FCB7DF2F1BEAC93B0017C281 /* KSWeather.xcdatamodeld */,
+				FCC4B75E1BEBE14C00450019 /* WeatherAPIService.swift */,
 			);
 			path = KSWeather;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCB7DF2B1BEAC93B0017C281 /* ViewController.swift in Sources */,
+				FCC4B75F1BEBE14C00450019 /* WeatherAPIService.swift in Sources */,
 				FCB7DF311BEAC93B0017C281 /* KSWeather.xcdatamodeld in Sources */,
 				FCB7DF291BEAC93B0017C281 /* AppDelegate.swift in Sources */,
 			);
@@ -486,6 +490,7 @@
 				FCB7DF521BEAC93C0017C281 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FCB7DF531BEAC93C0017C281 /* Build configuration list for PBXNativeTarget "KSWeatherTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +499,7 @@
 				FCB7DF551BEAC93C0017C281 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FCB7DF561BEAC93C0017C281 /* Build configuration list for PBXNativeTarget "KSWeatherUITests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +508,7 @@
 				FCB7DF581BEAC93C0017C281 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

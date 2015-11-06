@@ -17,6 +17,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         setupLocationManager()
+//        WeatherAPIService.weatherByCity("Cupertino")
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,8 +49,9 @@ extension ViewController : CLLocationManagerDelegate {
             }
             if let placemark = placemarks?.last {
                 self.locationManager.stopUpdatingLocation()
+                WeatherAPIService.weatherByCity(placemark.locality ?? "")
                 print(placemark.locality)
-                print(placemark.postalCode)
+                print(placemark.country)
             }
         }
     }
