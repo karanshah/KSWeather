@@ -78,7 +78,6 @@ class WeatherDetailViewController: UIViewController {
                     self.cityWeatherData = cityWeatherData
                     self.updateUILabels()
                 }
-                print(cityWeatherData)
             }
         } catch {
             dismissViewControllerAnimated(true, completion: nil)

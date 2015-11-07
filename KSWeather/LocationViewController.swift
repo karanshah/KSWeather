@@ -96,10 +96,6 @@ extension LocationViewController : CLLocationManagerDelegate {
                 if let city = placemark.locality {
                     self.currentLocationStatus = .Found(city: city)
                 }
-                self.currentLocationButton.titleLabel?.text = "View Weather for \(placemark.locality)"
-//                WeatherAPIService.weatherByCity(placemark.locality ?? "")
-                print(placemark.locality)
-                print(placemark.country)
             }
             self.updateCurrentLabelButtonLabel()
         }

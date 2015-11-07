@@ -12,13 +12,18 @@ struct WeatherAPIService {
     
     static let weatherQueryURLString = "http://api.openweathermap.org/data/2.5/weather?q="
     static let apiParamString = "&appid="
-    static let apiKey = ""
+    static let apiKey = ""          // Enter your Open Weather Map API Key here
     
     enum JSONError: String, ErrorType {
         case NoData = "ERROR: no data"
         case ConversionFailed = "ERROR: conversion from JSON failed"
     }
     
+    /** 
+     Get the weather data by city name
+     :param: city City to get the weather data for. 
+     :param: completion a completeion block to handle the CityWeather object that is returned on success
+    */
     static func weatherByCity(city: String, completion: (CityWeather) -> ()) throws {
         let trimmedCityString = city.stringByReplacingOccurrencesOfString(" ", withString: "")
         let urlPath = weatherQueryURLString + trimmedCityString + apiParamString + apiKey
@@ -27,7 +32,7 @@ struct WeatherAPIService {
             throw JSONError.NoData
         }
         queryURL(endpoint) { (json) -> () in
-            print(json)
+//            print(json)
             guard let cityName = json["name"] as? String,
                 let main = json["main"],
                 let humidity = main["humidity"] as? Int,
