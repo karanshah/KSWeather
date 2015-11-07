@@ -3,12 +3,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Location View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="KSWeather" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LocationViewController" customModule="KSWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,12 +17,86 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ErC-Gh-hPj">
+                                <rect key="frame" x="40" y="80" width="520" height="80"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="B3s-I0-eeE"/>
+                                </constraints>
+                                <state key="normal" title="Updating Current Location..."/>
+                                <connections>
+                                    <action selector="viewCurrentLocationWeather:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v6Y-TA-MlR"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U1R-0O-KeZ">
+                                <rect key="frame" x="40" y="250" width="470" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Izc-Wp-NmK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="500" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jbo-0L-tPc">
+                                <rect key="frame" x="530" y="250" width="30" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="9vC-Jk-alW"/>
+                                </constraints>
+                                <state key="normal" title="Go"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or Search for weather by a City:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nS4-mw-ky5">
+                                <rect key="frame" x="40" y="190" width="520" height="20.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nS4-mw-ky5" firstAttribute="top" secondItem="ErC-Gh-hPj" secondAttribute="bottom" constant="30" id="5Hu-du-gAg"/>
+                            <constraint firstItem="U1R-0O-KeZ" firstAttribute="top" secondItem="nS4-mw-ky5" secondAttribute="bottom" constant="40" id="8Lc-zU-tUz"/>
+                            <constraint firstItem="Jbo-0L-tPc" firstAttribute="leading" secondItem="U1R-0O-KeZ" secondAttribute="trailing" constant="20" id="ISD-KD-eeo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Jbo-0L-tPc" secondAttribute="trailing" constant="20" id="PBU-lk-lgg"/>
+                            <constraint firstItem="nS4-mw-ky5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="PWz-6s-ND6"/>
+                            <constraint firstItem="Jbo-0L-tPc" firstAttribute="top" secondItem="nS4-mw-ky5" secondAttribute="bottom" constant="40" id="efI-4X-lsE"/>
+                            <constraint firstItem="ErC-Gh-hPj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="kks-lE-tI1"/>
+                            <constraint firstItem="ErC-Gh-hPj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="nWp-Uh-2kE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nS4-mw-ky5" secondAttribute="trailing" constant="20" id="tj6-Wt-utT"/>
+                            <constraint firstItem="Jbo-0L-tPc" firstAttribute="leading" secondItem="U1R-0O-KeZ" secondAttribute="trailing" constant="20" id="uQc-G5-NLj"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ErC-Gh-hPj" secondAttribute="trailing" constant="20" id="vPb-eA-Jff"/>
+                            <constraint firstItem="U1R-0O-KeZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="zG2-Wo-qhC"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="currentLocationButton" destination="ErC-Gh-hPj" id="B1J-5D-htT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="455" y="249"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="NBI-R2-WiH">
+            <objects>
+                <viewController id="mbm-Le-llf" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9LJ-Kw-Zic"/>
+                        <viewControllerLayoutGuide type="bottom" id="vCX-mK-7Ws"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YXD-16-moJ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JPk-Nd-weH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1237" y="249"/>
         </scene>
     </scenes>
 </document>

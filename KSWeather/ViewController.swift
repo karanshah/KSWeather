@@ -16,8 +16,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupLocationManager()
-//        WeatherAPIService.weatherByCity("Cupertino")
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,38 +24,4 @@ class ViewController: UIViewController {
     }
 
 
-}
-
-extension ViewController : CLLocationManagerDelegate {
-    
-    func setupLocationManager(){
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
-    }
-    
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = manager.location else {
-            return
-        }
-        
-        CLGeocoder().reverseGeocodeLocation(location) { (placemarks, error) -> Void in
-            if error != nil {
-                print(error)
-                return
-            }
-            if let placemark = placemarks?.last {
-                self.locationManager.stopUpdatingLocation()
-                WeatherAPIService.weatherByCity(placemark.locality ?? "")
-                print(placemark.locality)
-                print(placemark.country)
-            }
-        }
-    }
-    
-    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-        print(error)
-    }
-    
 }
