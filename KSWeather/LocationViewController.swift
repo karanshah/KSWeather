@@ -34,6 +34,14 @@ class LocationViewController: UIViewController {
         
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let wdc = segue.destinationViewController as? WeatherDetailViewController where segue.identifier == "WeatherDetailSegue" {
+            if case .Found(let city) = currentLocationStatus {
+                wdc.city = city
+            }
+        }
+    }
+    
     func updateCurrentLabelButtonLabel() {
         let currentButtonText: String
         switch currentLocationStatus {

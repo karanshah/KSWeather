@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FC8071DB1BED6CF000F2B601 /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8071DA1BED6CF000F2B601 /* LocationViewController.swift */; };
+		FC8071DD1BED80D700F2B601 /* WeatherDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC8071DC1BED80D700F2B601 /* WeatherDetailViewController.swift */; };
 		FCB7DF291BEAC93B0017C281 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB7DF281BEAC93B0017C281 /* AppDelegate.swift */; };
 		FCB7DF2B1BEAC93B0017C281 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB7DF2A1BEAC93B0017C281 /* ViewController.swift */; };
 		FCB7DF2E1BEAC93B0017C281 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCB7DF2C1BEAC93B0017C281 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		FC8071DA1BED6CF000F2B601 /* LocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		FC8071DC1BED80D700F2B601 /* WeatherDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDetailViewController.swift; sourceTree = "<group>"; };
 		FCB7DF251BEAC93B0017C281 /* KSWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KSWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCB7DF281BEAC93B0017C281 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCB7DF2A1BEAC93B0017C281 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 				FCB7DF2F1BEAC93B0017C281 /* KSWeather.xcdatamodeld */,
 				FCC4B75E1BEBE14C00450019 /* WeatherAPIService.swift */,
 				FC8071DA1BED6CF000F2B601 /* LocationViewController.swift */,
+				FC8071DC1BED80D700F2B601 /* WeatherDetailViewController.swift */,
 			);
 			path = KSWeather;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC8071DD1BED80D700F2B601 /* WeatherDetailViewController.swift in Sources */,
 				FC8071DB1BED6CF000F2B601 /* LocationViewController.swift in Sources */,
 				FCB7DF2B1BEAC93B0017C281 /* ViewController.swift in Sources */,
 				FCC4B75F1BEBE14C00450019 /* WeatherAPIService.swift in Sources */,

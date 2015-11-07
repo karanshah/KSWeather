@@ -27,6 +27,7 @@
                                 <state key="normal" title="Updating Current Location..."/>
                                 <connections>
                                     <action selector="viewCurrentLocationWeather:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v6Y-TA-MlR"/>
+                                    <segue destination="mbm-Le-llf" kind="show" identifier="WeatherDetailSegue" id="1nQ-u8-XoG"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U1R-0O-KeZ">
@@ -79,10 +80,10 @@
             </objects>
             <point key="canvasLocation" x="455" y="249"/>
         </scene>
-        <!--View Controller-->
+        <!--Weather Detail View Controller-->
         <scene sceneID="NBI-R2-WiH">
             <objects>
-                <viewController id="mbm-Le-llf" sceneMemberID="viewController">
+                <viewController id="mbm-Le-llf" customClass="WeatherDetailViewController" customModule="KSWeather" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9LJ-Kw-Zic"/>
                         <viewControllerLayoutGuide type="bottom" id="vCX-mK-7Ws"/>
