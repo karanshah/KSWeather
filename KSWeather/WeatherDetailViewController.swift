@@ -19,7 +19,9 @@ class WeatherDetailViewController: UIViewController {
     }
     
     func getWeatherDetailsForCity() {
-        WeatherAPIService.weatherByCity(city)
+        WeatherAPIService.weatherByCity(city) { (cityWeatherData) -> () in
+            print(cityWeatherData)
+        }
         
     }
 }
