@@ -35,7 +35,7 @@ struct WeatherAPIService {
                 let maxTemp = main["temp_max"] as? Double else { return }
             
             var weatherDescription = ""
-            if let weatherObj = json["weather"], weatherDesc = weatherObj["description"] as? String {
+            if let weatherObj = json["weather"], weatherArr = weatherObj[0], weatherDesc = weatherArr["description"] as? String {
                 weatherDescription = weatherDesc
             }
             let cityWeather = CityWeather(cityName: cityName, humidity: humidity, currentTemp: temp, minTemp: minTemp, maxTemp: maxTemp, weatherDescription: weatherDescription)

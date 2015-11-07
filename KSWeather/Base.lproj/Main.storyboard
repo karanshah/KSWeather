@@ -175,7 +175,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ns-eB-jHe">
-                                <rect key="frame" x="148" y="272.5" width="100" height="20.5"/>
+                                <rect key="frame" x="148" y="272" width="100" height="20.5"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="W5D-GE-vUh"/>
@@ -184,6 +184,21 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="48o-4p-QzF">
+                                <rect key="frame" x="460" y="550" width="120" height="31"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="65O-gG-4xz"/>
+                                    <constraint firstAttribute="width" constant="120" id="JQd-LA-vu5"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="F"/>
+                                    <segment title="C"/>
+                                </segments>
+                                <connections>
+                                    <action selector="tempTypeChanged:" destination="mbm-Le-llf" eventType="valueChanged" id="Bqe-ne-agI"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -204,13 +219,24 @@
                             <constraint firstItem="rRd-N8-Y4y" firstAttribute="leading" secondItem="YXD-16-moJ" secondAttribute="leadingMargin" constant="20" id="dWk-QY-fnO"/>
                             <constraint firstItem="yEA-Rv-PDW" firstAttribute="top" secondItem="HF8-ac-FxR" secondAttribute="bottom" constant="8" id="fiT-g7-3K9"/>
                             <constraint firstItem="5Ns-eB-jHe" firstAttribute="leading" secondItem="hRN-dg-Scy" secondAttribute="trailing" constant="8" id="ouO-N2-wmJ"/>
+                            <constraint firstItem="vCX-mK-7Ws" firstAttribute="top" secondItem="48o-4p-QzF" secondAttribute="bottom" constant="20" id="qXi-G0-5AX"/>
                             <constraint firstItem="geU-wW-MfZ" firstAttribute="top" secondItem="S7z-3C-pkx" secondAttribute="bottom" constant="8" id="tdZ-vi-Q8B"/>
+                            <constraint firstItem="48o-4p-QzF" firstAttribute="trailing" secondItem="YXD-16-moJ" secondAttribute="trailingMargin" id="v6v-7Z-npi"/>
                             <constraint firstItem="hRN-dg-Scy" firstAttribute="leading" secondItem="YXD-16-moJ" secondAttribute="leadingMargin" constant="20" id="vmC-fY-8pE"/>
                             <constraint firstItem="S7z-3C-pkx" firstAttribute="top" secondItem="9c5-4X-xVg" secondAttribute="bottom" constant="30" id="vzF-X1-WrP"/>
                             <constraint firstItem="Hpz-pe-VRK" firstAttribute="leading" secondItem="YXD-16-moJ" secondAttribute="leadingMargin" constant="20" id="we9-QT-vwr"/>
                             <constraint firstItem="5Ns-eB-jHe" firstAttribute="top" secondItem="yEA-Rv-PDW" secondAttribute="bottom" constant="8" id="zNg-fl-lIe"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cityLabel" destination="Hpz-pe-VRK" id="AsS-XH-KnJ"/>
+                        <outlet property="currentTempLabel" destination="rRd-N8-Y4y" id="ZFl-ff-hSU"/>
+                        <outlet property="humidityLabel" destination="5Ns-eB-jHe" id="qeX-9i-jW3"/>
+                        <outlet property="lowTempLabel" destination="yEA-Rv-PDW" id="B3u-Jh-ZHc"/>
+                        <outlet property="maxTempLabel" destination="HF8-ac-FxR" id="3MC-4I-ES0"/>
+                        <outlet property="tempSegmentControl" destination="48o-4p-QzF" id="VHe-eE-j7y"/>
+                        <outlet property="weatherDescriptionLabel" destination="9c5-4X-xVg" id="lPN-6G-NTT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JPk-Nd-weH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
