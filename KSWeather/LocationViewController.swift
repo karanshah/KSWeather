@@ -18,9 +18,11 @@ class LocationViewController: UIViewController {
     }
 
     @IBOutlet var currentLocationButton: UIButton!
+    @IBOutlet var manualCityTextField: UITextField!
     
     let locationManager = CLLocationManager()
     var currentLocationStatus: LocationStatus = .Updating
+    var weatherCity: String = ""
     
     
     override func viewDidLoad() {
@@ -31,14 +33,25 @@ class LocationViewController: UIViewController {
     }
     
     @IBAction func viewCurrentLocationWeather(sender: UIButton) {
-        
+        if case .Found(let city) = currentLocationStatus {
+            weatherCity = city
+            performSegueWithIdentifier("WeatherDetailSegue", sender: nil)
+        }
+    }
+    
+    @IBAction func weaatherDetailsForManullyEnteredCity(sender: UIButton) {
+        if let manualCityInfo = manualCityTextField.text {
+            weatherCity = manualCityInfo
+            performSegueWithIdentifier("WeatherDetailSegue", sender: nil)
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let wdc = segue.destinationViewController as? WeatherDetailViewController where segue.identifier == "WeatherDetailSegue" {
-            if case .Found(let city) = currentLocationStatus {
-                wdc.city = city
+            if weatherCity.characters.count > 0 {
+                wdc.city = weatherCity
             }
+            weatherCity = ""
         }
     }
     

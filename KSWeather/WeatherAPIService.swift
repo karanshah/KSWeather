@@ -19,11 +19,12 @@ struct WeatherAPIService {
         case ConversionFailed = "ERROR: conversion from JSON failed"
     }
     
-    static func weatherByCity(city: String, completion: (CityWeather) -> ()) {
-        let urlPath = weatherQueryURLString + city + apiParamString + apiKey
+    static func weatherByCity(city: String, completion: (CityWeather) -> ()) throws {
+        let trimmedCityString = city.stringByReplacingOccurrencesOfString(" ", withString: "")
+        let urlPath = weatherQueryURLString + trimmedCityString + apiParamString + apiKey
         guard let endpoint = NSURL(string: urlPath) else {
             print("Error creating Weather API Url")
-            return
+            throw JSONError.NoData
         }
         queryURL(endpoint) { (json) -> () in
             print(json)

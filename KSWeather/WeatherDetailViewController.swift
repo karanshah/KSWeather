@@ -23,14 +23,27 @@ class WeatherDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getWeatherDetailsForCity()
+        if city.characters.count > 0 {
+            getWeatherDetailsForCity()
+        }
         
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        if city.characters.count == 0 {
+            dismissViewControllerAnimated(true, completion: nil)
+        }
     }
     
     @IBAction func tempTypeChanged(sender: UISegmentedControl) {
         updateUILabels()
     }
     
+    @IBAction func closeWeatherDetails(sender: UIButton) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     
     func updateUILabels() {
         if let cityWeatherData = cityWeatherData {
@@ -59,13 +72,18 @@ class WeatherDetailViewController: UIViewController {
     }
     
     func getWeatherDetailsForCity() {
-        WeatherAPIService.weatherByCity(city) { (cityWeatherData) -> () in
-            dispatch_async(dispatch_get_main_queue()) {
-                self.cityWeatherData = cityWeatherData
-                self.updateUILabels()
-            }            
-            print(cityWeatherData)
+        do {
+            try WeatherAPIService.weatherByCity(city) { (cityWeatherData) -> () in
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.cityWeatherData = cityWeatherData
+                    self.updateUILabels()
+                }
+                print(cityWeatherData)
+            }
+        } catch {
+            dismissViewControllerAnimated(true, completion: nil)
         }
+        
         
     }
 }
