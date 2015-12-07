@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -18,62 +19,103 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ErC-Gh-hPj">
-                                <rect key="frame" x="40" y="124" width="520" height="80"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="RaV-Cs-MK3">
+                                <rect key="frame" x="20" y="84" width="560" height="496"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="tye-XJ-QqJ">
+                                        <rect key="frame" x="130" y="0.0" width="300" height="269"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WeatherOrNotLogo_OneLine" translatesAutoresizingMaskIntoConstraints="NO" id="k8g-gA-cFg">
+                                                <rect key="frame" x="50" y="0.0" width="201" height="209"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="201" id="1WS-hZ-i4W"/>
+                                                    <constraint firstAttribute="width" secondItem="k8g-gA-cFg" secondAttribute="height" multiplier="201:209" id="KZF-C6-HTv"/>
+                                                    <constraint firstAttribute="width" secondItem="k8g-gA-cFg" secondAttribute="height" multiplier="201:209" id="aaZ-SA-qWl"/>
+                                                    <constraint firstAttribute="height" constant="209" id="fRb-d3-Ajr"/>
+                                                </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="aaZ-SA-qWl"/>
+                                                    </mask>
+                                                </variation>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ErC-Gh-hPj">
+                                                <rect key="frame" x="0.0" y="229" width="300" height="40"/>
+                                                <animations/>
+                                                <color key="backgroundColor" red="0.24705882352941178" green="0.2196078431372549" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="300" id="2f0-ZC-1pJ"/>
+                                                    <constraint firstAttribute="height" constant="40" id="lk8-BW-Eyw"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                                <state key="normal" title="Updating Current Location...">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="viewCurrentLocationWeather:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v6Y-TA-MlR"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <animations/>
+                                        <variation key="heightClass=compact" axis="horizontal"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="255" axis="vertical" distribution="equalSpacing" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="JnZ-LT-I9X">
+                                        <rect key="frame" x="130" y="381" width="300" height="115"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or Search for weather by a City:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nS4-mw-ky5">
+                                                <rect key="frame" x="30" y="0.0" width="240" height="21"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                <color key="textColor" red="0.2470588235" green="0.21960784310000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="bSt-TZ-j63">
+                                                <rect key="frame" x="0.0" y="33" width="300" height="82"/>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a city to get weather for" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U1R-0O-KeZ">
+                                                        <rect key="frame" x="28" y="0.0" width="244" height="30"/>
+                                                        <animations/>
+                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="500" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jbo-0L-tPc">
+                                                        <rect key="frame" x="0.0" y="42" width="300" height="40"/>
+                                                        <animations/>
+                                                        <color key="backgroundColor" red="0.2470588235" green="0.21960784310000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="300" id="1bM-nS-ogI"/>
+                                                            <constraint firstAttribute="height" constant="40" id="tyv-z9-BlG"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                                                        <state key="normal" title="Search">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="weaatherDetailsForManullyEnteredCity:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yMl-QG-YaI"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <animations/>
+                                                <variation key="heightClass=compact" axis="horizontal"/>
+                                            </stackView>
+                                        </subviews>
+                                        <animations/>
+                                    </stackView>
+                                </subviews>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="B3s-I0-eeE"/>
+                                    <constraint firstAttribute="bottom" secondItem="JnZ-LT-I9X" secondAttribute="bottom" id="geQ-xD-i6x"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
-                                <state key="normal" title="Updating Current Location..."/>
-                                <connections>
-                                    <action selector="viewCurrentLocationWeather:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v6Y-TA-MlR"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a city to get weather for" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U1R-0O-KeZ">
-                                <rect key="frame" x="40" y="295" width="470" height="30"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Izc-Wp-NmK"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="500" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jbo-0L-tPc">
-                                <rect key="frame" x="530" y="295" width="30" height="30"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="9vC-Jk-alW"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
-                                <state key="normal" title="Go"/>
-                                <connections>
-                                    <action selector="weaatherDetailsForManullyEnteredCity:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yMl-QG-YaI"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or Search for weather by a City:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nS4-mw-ky5">
-                                <rect key="frame" x="40" y="234" width="520" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </stackView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.77254901960784317" green="0.74117647058823533" blue="0.6588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="nS4-mw-ky5" firstAttribute="top" secondItem="ErC-Gh-hPj" secondAttribute="bottom" constant="30" id="5Hu-du-gAg"/>
-                            <constraint firstItem="U1R-0O-KeZ" firstAttribute="top" secondItem="nS4-mw-ky5" secondAttribute="bottom" constant="40" id="8Lc-zU-tUz"/>
-                            <constraint firstItem="Jbo-0L-tPc" firstAttribute="leading" secondItem="U1R-0O-KeZ" secondAttribute="trailing" constant="20" id="ISD-KD-eeo"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Jbo-0L-tPc" secondAttribute="trailing" constant="20" id="PBU-lk-lgg"/>
-                            <constraint firstItem="nS4-mw-ky5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="PWz-6s-ND6"/>
-                            <constraint firstItem="Jbo-0L-tPc" firstAttribute="top" secondItem="nS4-mw-ky5" secondAttribute="bottom" constant="40" id="efI-4X-lsE"/>
-                            <constraint firstItem="ErC-Gh-hPj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="kks-lE-tI1"/>
-                            <constraint firstItem="ErC-Gh-hPj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="nWp-Uh-2kE"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="nS4-mw-ky5" secondAttribute="trailing" constant="20" id="tj6-Wt-utT"/>
-                            <constraint firstItem="Jbo-0L-tPc" firstAttribute="leading" secondItem="U1R-0O-KeZ" secondAttribute="trailing" constant="20" id="uQc-G5-NLj"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ErC-Gh-hPj" secondAttribute="trailing" constant="20" id="vPb-eA-Jff"/>
-                            <constraint firstItem="U1R-0O-KeZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="zG2-Wo-qhC"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RaV-Cs-MK3" secondAttribute="bottom" constant="20" id="1Mf-uK-wKi"/>
+                            <constraint firstItem="RaV-Cs-MK3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="ECz-sf-Ehu"/>
+                            <constraint firstAttribute="trailing" secondItem="RaV-Cs-MK3" secondAttribute="trailing" constant="20" id="ZIS-jA-i1u"/>
+                            <constraint firstItem="RaV-Cs-MK3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="qs2-fB-SsL"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Find City" id="D9s-xB-P1A"/>
@@ -287,4 +329,7 @@
             <point key="canvasLocation" x="455" y="249"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="WeatherOrNotLogo_OneLine" width="201" height="209"/>
+    </resources>
 </document>
