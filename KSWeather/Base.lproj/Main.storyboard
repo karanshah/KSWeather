@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="TSP-QU-cad">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Location View Controller-->
+        <!--Find City-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="LocationViewController" customModule="KSWeather" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ErC-Gh-hPj">
-                                <rect key="frame" x="40" y="80" width="520" height="80"/>
+                                <rect key="frame" x="40" y="124" width="520" height="80"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="B3s-I0-eeE"/>
@@ -31,7 +31,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter a city to get weather for" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="U1R-0O-KeZ">
-                                <rect key="frame" x="40" y="250" width="470" height="30"/>
+                                <rect key="frame" x="40" y="295" width="470" height="30"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Izc-Wp-NmK"/>
@@ -40,7 +40,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="500" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jbo-0L-tPc">
-                                <rect key="frame" x="530" y="250" width="30" height="30"/>
+                                <rect key="frame" x="530" y="295" width="30" height="30"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="9vC-Jk-alW"/>
@@ -52,7 +52,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or Search for weather by a City:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nS4-mw-ky5">
-                                <rect key="frame" x="40" y="190" width="520" height="20.5"/>
+                                <rect key="frame" x="40" y="234" width="520" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -60,7 +60,7 @@
                             </label>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.77254901960784317" green="0.74117647058823533" blue="0.6588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="nS4-mw-ky5" firstAttribute="top" secondItem="ErC-Gh-hPj" secondAttribute="bottom" constant="30" id="5Hu-du-gAg"/>
                             <constraint firstItem="U1R-0O-KeZ" firstAttribute="top" secondItem="nS4-mw-ky5" secondAttribute="bottom" constant="40" id="8Lc-zU-tUz"/>
@@ -76,6 +76,7 @@
                             <constraint firstItem="U1R-0O-KeZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="zG2-Wo-qhC"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Find City" id="D9s-xB-P1A"/>
                     <connections>
                         <outlet property="currentLocationButton" destination="ErC-Gh-hPj" id="B1J-5D-htT"/>
                         <outlet property="manualCityTextField" destination="U1R-0O-KeZ" id="cNP-vG-v7v"/>
@@ -84,7 +85,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="455" y="249"/>
+            <point key="canvasLocation" x="1267" y="249"/>
         </scene>
         <!--Weather Detail View Controller-->
         <scene sceneID="NBI-R2-WiH">
@@ -99,7 +100,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="68" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRd-N8-Y4y">
-                                <rect key="frame" x="40" y="70" width="520" height="50"/>
+                                <rect key="frame" x="40" y="114" width="520" height="50"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="8zb-DH-L5X"/>
@@ -109,7 +110,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9c5-4X-xVg">
-                                <rect key="frame" x="40" y="136" width="520" height="50"/>
+                                <rect key="frame" x="40" y="180" width="520" height="50"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="uLD-yt-TOg"/>
@@ -119,7 +120,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High: " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S7z-3C-pkx">
-                                <rect key="frame" x="40" y="216" width="100" height="20.5"/>
+                                <rect key="frame" x="40" y="260" width="100" height="21"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="izh-sP-HfP"/>
@@ -129,7 +130,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="70" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HF8-ac-FxR">
-                                <rect key="frame" x="148" y="216" width="100" height="20.5"/>
+                                <rect key="frame" x="148" y="260" width="100" height="21"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="ofZ-St-geH"/>
@@ -139,7 +140,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEA-Rv-PDW">
-                                <rect key="frame" x="148" y="244" width="100" height="20.5"/>
+                                <rect key="frame" x="148" y="289" width="100" height="21"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="L4w-lM-oGM"/>
@@ -149,7 +150,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Low: " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="geU-wW-MfZ">
-                                <rect key="frame" x="40" y="244" width="100" height="20.5"/>
+                                <rect key="frame" x="40" y="289" width="100" height="21"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="kHQ-zR-bAP"/>
@@ -159,7 +160,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Humidity:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRN-dg-Scy">
-                                <rect key="frame" x="40" y="273" width="100" height="20.5"/>
+                                <rect key="frame" x="40" y="318" width="100" height="21"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="avh-E4-jLi"/>
@@ -169,7 +170,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cupertino" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hpz-pe-VRK">
-                                <rect key="frame" x="40" y="28" width="520" height="21"/>
+                                <rect key="frame" x="40" y="72" width="520" height="21"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="ZnK-Zh-rl9"/>
@@ -179,7 +180,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ns-eB-jHe">
-                                <rect key="frame" x="148" y="272" width="100" height="20.5"/>
+                                <rect key="frame" x="148" y="318" width="100" height="21"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="W5D-GE-vUh"/>
@@ -258,7 +259,32 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JPk-Nd-weH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1237" y="249"/>
+            <point key="canvasLocation" x="2049" y="249"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wJ5-8v-ypT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="TSP-QU-cad" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="j2i-Wb-ieT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.6588235294" green="0.81960784310000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="c8S-LI-fZb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RMm-qH-cgQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="455" y="249"/>
         </scene>
     </scenes>
 </document>
