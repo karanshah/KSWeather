@@ -122,6 +122,8 @@
                     <connections>
                         <outlet property="currentLocationButton" destination="ErC-Gh-hPj" id="B1J-5D-htT"/>
                         <outlet property="manualCityTextField" destination="U1R-0O-KeZ" id="cNP-vG-v7v"/>
+                        <outlet property="stackViewBottomConstraint" destination="1Mf-uK-wKi" id="WXT-Fu-aAa"/>
+                        <outlet property="topStackView" destination="tye-XJ-QqJ" id="hzG-80-3uc"/>
                         <segue destination="mbm-Le-llf" kind="show" identifier="WeatherDetailSegue" id="lYW-YP-Umk"/>
                     </connections>
                 </viewController>

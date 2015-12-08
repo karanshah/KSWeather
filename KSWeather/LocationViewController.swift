@@ -9,7 +9,7 @@
 import UIKit
 import CoreLocation
 
-class LocationViewController: UIViewController {
+class LocationViewController: UIViewController, UITextFieldDelegate {
     
     enum LocationStatus {
         case Found(city: String)
@@ -19,7 +19,9 @@ class LocationViewController: UIViewController {
 
     @IBOutlet var currentLocationButton: UIButton!
     @IBOutlet var manualCityTextField: UITextField!
+    @IBOutlet var stackViewBottomConstraint: NSLayoutConstraint!
     
+    @IBOutlet var topStackView: UIStackView!
     let locationManager = CLLocationManager()
     var currentLocationStatus: LocationStatus = .Updating
     var weatherCity: String = ""
@@ -30,6 +32,9 @@ class LocationViewController: UIViewController {
         
         updateCurrentLabelButtonLabel()
         setupLocationManager()
+        manualCityTextField.delegate = self
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name:UIKeyboardWillShowNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name:UIKeyboardWillHideNotification, object: nil);
     }
     
     @IBAction func viewCurrentLocationWeather(sender: UIButton) {
@@ -69,6 +74,30 @@ class LocationViewController: UIViewController {
 
     }
     
+    func keyboardWillShow(notification: NSNotification) {
+        
+        if let info = notification.userInfo {
+            let keyboardFrame: CGRect = (info[UIKeyboardFrameEndUserInfoKey] as! NSValue).CGRectValue()
+            UIView.animateWithDuration(0.8, animations: { () -> Void in
+                self.topStackView.hidden = true
+                self.stackViewBottomConstraint.constant = keyboardFrame.size.height + 20
+            })
+        }
+        
+    }
+    
+    func keyboardWillHide(notification: NSNotification) {
+        UIView.animateWithDuration(0.8) { () -> Void in
+            self.topStackView.hidden = false
+            self.stackViewBottomConstraint.constant = 20
+        }
+        
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        view.endEditing(true)
+        return false
+    }
 }
 
 extension LocationViewController : CLLocationManagerDelegate {
