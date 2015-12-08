@@ -13,12 +13,8 @@ class WeatherDetailViewController: UIViewController {
     var city = ""
     var cityWeatherData: CityWeather?
     
-    @IBOutlet var cityLabel: UILabel!
     @IBOutlet var currentTempLabel: UILabel!
     @IBOutlet var weatherDescriptionLabel: UILabel!
-    @IBOutlet var maxTempLabel: UILabel!
-    @IBOutlet var lowTempLabel: UILabel!
-    @IBOutlet var humidityLabel: UILabel!
     @IBOutlet var tempSegmentControl: UISegmentedControl!
     
     override func viewDidLoad() {
@@ -47,12 +43,9 @@ class WeatherDetailViewController: UIViewController {
     
     func updateUILabels() {
         if let cityWeatherData = cityWeatherData {
-            cityLabel.text = cityWeatherData.cityName
+            title = cityWeatherData.cityName
             currentTempLabel.text = tempByUserPreference(cityWeatherData.currentTemp)
             weatherDescriptionLabel.text = cityWeatherData.weatherDescription
-            maxTempLabel.text = tempByUserPreference(cityWeatherData.maxTemp)
-            lowTempLabel.text = tempByUserPreference(cityWeatherData.minTemp)
-            humidityLabel.text = "\(cityWeatherData.humidity)%"
         }
     }
     
