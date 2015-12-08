@@ -12,7 +12,7 @@ struct WeatherAPIService {
     
     static let weatherQueryURLString = "http://api.openweathermap.org/data/2.5/weather?q="
     static let apiParamString = "&appid="
-    static let apiKey = ""          // Enter your Open Weather Map API Key here
+    static let apiKey = ""          // Enter your Open Weather Map API Key here (temp wrong key - 2ff42eb65394991792cdd95cf3a4447)
     
     enum JSONError: String, ErrorType {
         case NoData = "ERROR: no data"
