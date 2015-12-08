@@ -9,9 +9,24 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>UIComponenets.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>FC8D62431C16515F002BB844</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FC8D624C1C16515F002BB844</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>FCB7DF241BEAC93B0017C281</key>
 		<dict>
 			<key>primary</key>
